@@ -1,0 +1,69 @@
+2026-11-19 04:44:48 | INFO     | ===== Inicio de ejecución del sistema Software FJ =====
+2026-11-19 04:44:48 | INFO     | Simulación 1 iniciada: Registro válido de un cliente
+2026-11-19 04:44:48 | INFO     | Cliente registrado: Cliente #1: Laura Gómez | Documento: 1144055321 | Correo: laura.gomez@correo.com
+2026-11-19 04:44:48 | DEBUG    | Intento de registro de cliente finalizado. Total de clientes: 1
+2026-11-19 04:44:48 | INFO     | Simulación 1: operación exitosa.
+2026-11-19 04:44:48 | INFO     | Simulación 2 iniciada: Registro de cliente con correo inválido
+2026-11-19 04:44:48 | ERROR    | Registro de cliente fallido: El correo 'carlos.ruiz-sin-arroba' no tiene un formato válido.
+2026-11-19 04:44:48 | DEBUG    | Intento de registro de cliente finalizado. Total de clientes: 1
+2026-11-19 04:44:48 | ERROR    | Simulación 2: error controlado [ErrorValidacion] El correo 'carlos.ruiz-sin-arroba' no tiene un formato válido.
+2026-11-19 04:44:48 | INFO     | Simulación 3 iniciada: Registro de cliente con documento duplicado
+2026-11-19 04:44:48 | ERROR    | Registro de cliente fallido: Ya existe un cliente con el documento 1144055321.
+2026-11-19 04:44:48 | DEBUG    | Intento de registro de cliente finalizado. Total de clientes: 1
+2026-11-19 04:44:48 | ERROR    | Simulación 3: error controlado [ErrorCliente] Ya existe un cliente con el documento 1144055321.
+2026-11-19 04:44:48 | INFO     | Simulación 4 iniciada: Registro de cliente con parámetros faltantes
+2026-11-19 04:44:48 | ERROR    | Registro de cliente fallido por parámetros faltantes: Cliente.__init__() missing 2 required positional arguments: 'correo' and 'telefono'
+2026-11-19 04:44:48 | DEBUG    | Intento de registro de cliente finalizado. Total de clientes: 1
+2026-11-19 04:44:48 | ERROR    | Simulación 4: error controlado [ErrorCliente] Faltan datos obligatorios para registrar el cliente.
+2026-11-19 04:44:48 | INFO     | Simulación 5 iniciada: Creación correcta de servicios
+2026-11-19 04:44:48 | INFO     | Servicio creado: Servicio #3: Sala 'Sala Ejecutiva' | Capacidad: 12 personas | Tarifa: $80,000 por hora | Estado: disponible
+2026-11-19 04:44:48 | INFO     | Servicio creado: Servicio #4: Alquiler 'Portátil Corporativo' | Cantidad: 3 equipos | Tarifa: $45,000 por día y por equipo | Estado: disponible
+2026-11-19 04:44:48 | INFO     | Servicio creado: Servicio #5: Asesoría 'Asesoría en Ciberseguridad' | Área: Seguridad informática | Nivel: senior | Tarifa: $120,000 por hora | Estado: disponible
+2026-11-19 04:44:48 | INFO     | Servicio creado: Servicio #6: Sala 'Auditorio Principal' | Capacidad: 60 personas | Tarifa: $200,000 por hora | Estado: no disponible
+2026-11-19 04:44:48 | INFO     | Simulación 5: operación exitosa.
+2026-11-19 04:44:48 | INFO     | Simulación 6 iniciada: Creación de servicio con tarifa negativa
+2026-11-19 04:44:48 | ERROR    | Creación de servicio fallida: La tarifa base debe ser mayor que cero (valor recibido: -50000).
+2026-11-19 04:44:48 | ERROR    | Simulación 6: error controlado [ErrorServicio] La tarifa base debe ser mayor que cero (valor recibido: -50000).
+2026-11-19 04:44:48 | INFO     | Simulación 7 iniciada: Creación de servicio de tipo inexistente
+2026-11-19 04:44:48 | ERROR    | Creación de servicio fallida: tipo desconocido 'transporte'.
+2026-11-19 04:44:48 | ERROR    | Simulación 7: error controlado [ErrorServicio] Tipo de servicio desconocido: 'transporte'.
+2026-11-19 04:44:48 | INFO     | Simulación 8 iniciada: Creación de servicio con parámetros faltantes
+2026-11-19 04:44:48 | ERROR    | Creación de servicio fallida por parámetros faltantes: AsesoriaEspecializada.__init__() missing 1 required positional argument: 'area'
+2026-11-19 04:44:48 | ERROR    | Simulación 8: error controlado [ErrorServicio] Faltan parámetros para crear el servicio de tipo 'asesoria'.
+2026-11-19 04:44:48 | INFO     | Simulación 9 iniciada: Reserva exitosa de una sala (IVA por defecto)
+2026-11-19 04:44:48 | INFO     | Reserva creada: Reserva #7: Laura Gómez -> Sala Ejecutiva | Duración: 3 | Estado: PENDIENTE | Costo: sin calcular
+2026-11-19 04:44:48 | INFO     | Reserva #7 confirmada.
+2026-11-19 04:44:48 | INFO     | Reserva #7 procesada. Costo total: 285600.00
+2026-11-19 04:44:48 | DEBUG    | Reserva #7: fin del intento de procesamiento (estado: PROCESADA).
+2026-11-19 04:44:48 | INFO     | Simulación 9: operación exitosa.
+2026-11-19 04:44:48 | INFO     | Simulación 10 iniciada: Reserva exitosa de una asesoría con código promocional
+2026-11-19 04:44:48 | INFO     | Reserva creada: Reserva #8: Laura Gómez -> Asesoría en Ciberseguridad | Duración: 2 | Estado: PENDIENTE | Costo: sin calcular
+2026-11-19 04:44:48 | INFO     | Reserva #8: código promocional FJ10 aplicado.
+2026-11-19 04:44:48 | INFO     | Reserva #8 confirmada.
+2026-11-19 04:44:48 | INFO     | Reserva #8 procesada. Costo total: 340200.00
+2026-11-19 04:44:48 | DEBUG    | Reserva #8: fin del intento de procesamiento (estado: PROCESADA).
+2026-11-19 04:44:48 | INFO     | Simulación 10: operación exitosa.
+2026-11-19 04:44:48 | INFO     | Simulación 11 iniciada: Reserva con un cliente no registrado
+2026-11-19 04:44:48 | ERROR    | Creación de reserva fallida: No existe un cliente registrado con el documento 99999999.
+2026-11-19 04:44:48 | ERROR    | Simulación 11: error controlado [ErrorCliente] No existe un cliente registrado con el documento 99999999.
+2026-11-19 04:44:48 | INFO     | Simulación 12 iniciada: Reserva con duración fuera del rango permitido
+2026-11-19 04:44:48 | ERROR    | Creación de reserva fallida: La duración para 'Sala Ejecutiva' debe estar entre 1 y 8 horas (valor recibido: 15).
+2026-11-19 04:44:48 | ERROR    | Simulación 12: error controlado [ErrorValidacion] La duración para 'Sala Ejecutiva' debe estar entre 1 y 8 horas (valor recibido: 15).
+2026-11-19 04:44:48 | INFO     | Simulación 13 iniciada: Reserva sobre un servicio no disponible
+2026-11-19 04:44:48 | INFO     | Reserva creada: Reserva #9: Laura Gómez -> Auditorio Principal | Duración: 4 | Estado: PENDIENTE | Costo: sin calcular
+2026-11-19 04:44:48 | ERROR    | Reserva #9: no se pudo confirmar. El servicio 'Auditorio Principal' no está disponible.
+2026-11-19 04:44:48 | ERROR    | Simulación 13: error controlado [ServicioNoDisponibleError] El servicio 'Auditorio Principal' no está disponible.
+2026-11-19 04:44:48 | INFO     | Simulación 14 iniciada: Reserva con cálculo inconsistente (descuento del 150 %)
+2026-11-19 04:44:48 | INFO     | Reserva creada: Reserva #10: Laura Gómez -> Portátil Corporativo | Duración: 5 | Estado: PENDIENTE | Costo: sin calcular
+2026-11-19 04:44:48 | INFO     | Reserva #10: descuento por porcentaje registrado (1.5).
+2026-11-19 04:44:48 | INFO     | Reserva #10 confirmada.
+2026-11-19 04:44:48 | DEBUG    | Reserva #10: fin del intento de procesamiento (estado: CONFIRMADA).
+2026-11-19 04:44:48 | ERROR    | Simulación 14: error controlado [ErrorReserva] La reserva #10 no se pudo procesar por un error de cálculo.
+2026-11-19 04:44:48 | INFO     | Simulación 15 iniciada: Cancelación de una reserva ya procesada
+2026-11-19 04:44:48 | ERROR    | Reserva #7: cancelación no permitida en estado PROCESADA.
+2026-11-19 04:44:48 | ERROR    | Simulación 15: error controlado [ErrorReserva] No se puede cancelar una reserva en estado PROCESADA.
+2026-11-19 04:44:48 | INFO     | Simulación 16 iniciada: Cancelación válida de una reserva pendiente
+2026-11-19 04:44:48 | INFO     | Reserva creada: Reserva #11: Laura Gómez -> Portátil Corporativo | Duración: 2 | Estado: PENDIENTE | Costo: sin calcular
+2026-11-19 04:44:48 | INFO     | Reserva #11 cancelada.
+2026-11-19 04:44:48 | INFO     | Simulación 16: operación exitosa.
+2026-11-19 04:44:48 | INFO     | ===== Fin de ejecución: 5 exitosas, 11 errores controlados, 0 inesperados =====
