@@ -21,6 +21,8 @@ El objetivo de la práctica es aplicar el manejo de excepciones para que la apli
 |---|---|
 | `Fase4_SoftwareFJ.ipynb` | Cuaderno con el código fuente documentado, las simulaciones y sus resultados |
 | `software_fj.log` | Archivo de logs generado por la ejecución del cuaderno |
+| `software_fj.py` | Mismo código del cuaderno en un script de Python |
+| `test_software_fj.py` | Pruebas automatizadas del manejo de excepciones |
 | `README.md` | Documentación del proyecto |
 
 ## Estructura del sistema
@@ -90,6 +92,26 @@ El cuaderno ejecuta 16 operaciones completas:
 | 16 | Cancelación válida de una reserva pendiente | Exitosa |
 
 Resultado: 5 operaciones exitosas, 11 errores controlados y 0 errores inesperados.
+
+## Pruebas automatizadas
+
+Aporte de **Leonardo Izquierdo Henao**. El archivo `test_software_fj.py` comprueba con `unittest` que cada parte del manejo de excepciones funcione por separado, sin depender del orden de las simulaciones. Cada prueba crea un sistema nuevo y escribe su log en una carpeta temporal, así que no modifica `software_fj.log`.
+
+| Grupo de pruebas | Qué verifica |
+|---|---|
+| `TestExcepcionesPersonalizadas` | Que todas las excepciones hereden de `ErrorSoftwareFJ` y que `ServicioNoDisponibleError` sea un `ErrorServicio` |
+| `TestAbstraccionYEncapsulacion` | Que `Entidad` y `Servicio` no se puedan instanciar y que el cliente valide y encapsule su correo |
+| `TestPolimorfismoDeServicios` | El costo de cada servicio con sus reglas propias (recargo de salas grandes, cantidad de equipos, nivel del asesor) y su rango de duración |
+| `TestSobrecarga` | Las variantes de `calcular_costo()` y de `aplicar_descuento()` según el tipo del argumento |
+| `TestEncadenamiento` | Que `raise ... from ...` conserve la causa original (`ErrorCalculo` o `TypeError`) en `__cause__` |
+| `TestCicloDeReserva` | Los bloques `else` y `finally` de `procesar()`, la confirmación de servicios no disponibles y las reglas de cancelación |
+| `TestLogsYEstabilidad` | Que los errores queden en el log y que `ejecutar_simulacion()` no deje escapar errores controlados ni inesperados |
+
+Ejecución (23 pruebas):
+
+```bash
+python -m unittest -v test_software_fj.py
+```
 
 ## Cómo ejecutar
 
